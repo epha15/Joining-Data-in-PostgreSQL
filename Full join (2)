@@ -1,0 +1,23 @@
+#1
+SELECT countries.name, code, languages.name AS language
+FROM languages
+FULL JOIN countries
+USING (code)
+WHERE countries.name LIKE 'V%' OR countries.name IS NULL
+ORDER BY countries.name;
+
+#2
+SELECT countries.name, code, languages.name AS language
+FROM languages
+LEFT JOIN countries
+USING (code)
+WHERE countries.name LIKE 'V%' OR countries.name IS NULL
+ORDER BY countries.name;
+
+#3
+SELECT countries.name, code, languages.name AS language
+FROM languages
+INNER JOIN countries
+USING (code)
+WHERE countries.name LIKE 'V%' OR countries.name IS NULL
+ORDER BY countries.name;
