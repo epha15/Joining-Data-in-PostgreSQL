@@ -1,0 +1,7 @@
+SELECT c.name AS country, region, p.life_expectancy AS life_exp
+FROM countries AS c
+LEFT JOIN populations AS p
+ON c.code = p.country_code
+WHERE year = 2010
+ORDER BY life_exp ASC
+LIMIT 5;
