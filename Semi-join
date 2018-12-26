@@ -1,0 +1,18 @@
+#1
+SELECT code
+FROM countries
+WHERE region LIKE  'Middle East'
+
+#2
+SELECT DISTINCT name
+FROM languages
+ORDER BY name ASC
+
+#3 Semi Join
+SELECT DISTINCT name
+FROM languages
+WHERE code IN (
+SELECT code
+FROM countries
+WHERE region LIKE  'Middle East')
+ORDER BY name ASC
