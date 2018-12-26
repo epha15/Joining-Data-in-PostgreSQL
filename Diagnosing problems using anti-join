@@ -1,0 +1,18 @@
+#1
+SELECT COUNT(name)
+FROM countries
+WHERE continent LIKE 'Oceania'
+
+#2
+SELECT c1.code, name, basic_unit AS currency
+FROM countries AS c1
+INNER JOIN currencies AS c2
+ON c1.code=c2.code
+WHERE c1.continent = 'Oceania
+
+#3g et the country code and country name for the Oceanian countries that are not included in the currencies table
+SELECT code, name
+FROM countries
+WHERE continent = 'Oceania' AND code NOT IN (
+SELECT code
+FROM currencies)
